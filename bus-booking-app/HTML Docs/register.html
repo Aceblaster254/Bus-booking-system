@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registation Page</title>
+</head>
+<body>
+    <div class ="container">
+        <h2 class = "text-center">Create a bus booking account!</h2>
+        <form id ="registration-form">
+            <div class="form-group>
+                <label for="name" class="form-label">Full names:</label>
+                <input type="text" class="form-control" id="name" name="name" placeholder="Enter your full names:" required><br><br>
+            </div>
+            <div class="form-group>
+                <label for="email" class="form-label">Email:</label>
+                <input type="email" class="form-control" id="email" name="email" placeholder="Enter your email:" required><br><br>
+            </div>
+            <div class="form-group>
+                <label for="password" class="form-label">Password:</label>
+                <input type="password" class="form-control" id="password" name="password" placeholder="Enter your password:" required><br>
+                <small id="password-help" class="form-text text-muted">Your password must be at least 8 characters long.</small><br><br>
+            </div>
+            <div class="form-group>
+                <label for="confirm-password" class="form-label">Confirm password:</label>
+                <input type="password" class="form-control" id="confirm-password" name="confirm-password" placeholder="Confirm your password:" required><br><br>
+            </div>
+            <div class="form-group>
+                <label for="phone-number" class="form-label">Phone number:</label>
+                <input type="text" class="form-control" id="phone-number" name="phone-number" placeholder="Enter your phone number:" required><br><br>
+            </div>
+            <div class ="form-group">
+                <label for="client-category" class="form-label">Category:</label>
+                <select class="form-control" id="client-category" name="client-category" required><br><br>
+                    <option value="" disabled selected>Select your category:</option>
+                    <option value="student">Student</option>
+                    <option value="staff">Staff</option>
+                    <option value="other">Other</option>
+                </select>
+            </div>
+            <div class="form-group d-none" id="student-details">
+                <label for="student-id" class="form-label">Student ID:</label>
+                <input type="text" class="form-control" id="student-id" name="student-id" placeholder="Enter your student ID:\n" required>    
+            </div>
+            <div class="form-group d-none" id="staff-details">
+                <label for="staff-id" class="form-label">Staff ID:</label>
+                <input type="text" class="form-control" id="staff-id" name="staff-id" placeholder="Enter your staff ID:\n" required>
+            </div> 
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary">Register</button>
+        </form>   
+    </div>
+    <script>
+        const category = document.getElementById('client-category');
+        const studentDetails = document.getElementById('student-details');
+        const staffDetails = document.getElementById('staff-details');
+
+        category.addEventListener('change', (event) => {
+            if (event.target.value === 'student') {
+                studentDetails.classList.remove('d-none');
+                staffDetails.classList.add('d-none');
+            } else if (event.target.value === 'staff') {
+                staffDetails.classList.remove('d-none');
+                studentDetails.classList.add('d-none');
+            } else {
+                studentDetails.classList.add('d-none');
+                staffDetails.classList.add('d-none');
+            }
+        }); 
+    </script>
+</body>
+</html>
