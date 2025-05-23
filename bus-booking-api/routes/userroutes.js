@@ -16,7 +16,13 @@ router.get('/get-users', async (req, res) => {
 //Create a new user
 router.post('/add-user', async (req, res) => {
     const { name, email, password, role, phoneNumber } = req.body;
-    const newUser = new User({ name, email, password, role, phoneNumber });
+    const newUser = new User({ name, email, password, phoneNumber });
+
+//check if the user already exists
+    const user = await User.findOne({ email });
+    if (user) {
+        return res.status(400).json({ error: 'User already exists' });
+    }
 
     try {
         await newUser.save();

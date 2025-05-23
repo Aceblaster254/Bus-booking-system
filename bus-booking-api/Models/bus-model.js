@@ -25,7 +25,13 @@ const BusSchema = new mongoose.Schema({
     status: {
         type: String,
         enum: ['active', 'inactive'],
-        default: 'active'}
+        default: 'active'
+    },
+    location: {
+        lat: { type: Number },
+        lng: { type: Number },
+        updatedAt: { type: Date }
+    }
 });
 
 const Bus = mongoose.model('Bus', BusSchema);

@@ -1,4 +1,4 @@
-//models/Route.js
+//Models/route.js
 const mongoose = require('mongoose');
 const Routeschema = new mongoose.Schema({
     origin: {
@@ -9,7 +9,9 @@ const Routeschema = new mongoose.Schema({
         type: String,
         required: true
     },
-    stops: [string],
+    stops: {
+        type: [String],
+    },
     distance: {
         type: Number,
         required: true
