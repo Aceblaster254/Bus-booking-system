@@ -1,5 +1,6 @@
 import { useState } from 'react'
-import Testimonials from './Components/Testimonials'
+import Footer from './Components/Footer'
+// import Testimonials from './Components/Testimonials'
 // import Login from './Components/LogIn'
 
 function App() {
@@ -8,7 +9,8 @@ function App() {
   return (
     <>
       {/* <Login /> */}
-      <Testimonials />
+      {/* <Testimonials /> */}
+      <Footer />
     </>
   )
 }
