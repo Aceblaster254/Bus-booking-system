@@ -1,0 +1,10 @@
+#footer{
+display: flex;
+  justify-content: space-evenly;
+  background-color: wheat;
+  border-radius: 0.5rem;
+  padding: 2.5rem;
+}
+#footer div{
+  text-align: center;
+}
