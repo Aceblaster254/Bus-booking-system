@@ -1,23 +1,21 @@
 {
   "name": "bus-booking-project",
   "version": "1.0.0",
-  "main": "index.js",
+  "description": "Backend API for bus booking system",
+  "main": "server.js",
   "scripts": {
-    "start": "nodemon server.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+      "start": "nodemon bus-booking-api/server.js"
   },
   "keywords": [],
-  "author": "",
+  "author": "Liam Ithau",
   "license": "ISC",
-  "description": "",
   "dependencies": {
     "axios": "^1.8.2",
     "body-parser": "^1.20.3",
     "express": "^4.21.2",
-    "mongoose": "^8.12.1",
-    "react-scripts": "^5.0.1"
+    "mongoose": "^8.12.1"
   },
   "devDependencies": {
-    "nodemon": "^3.1.9"
+    "nodemon": "^3.1.10"
   }
 }
